@@ -20,10 +20,14 @@ public record UserRequest(
         @NotNull(message = "A senha não pode ser nulo!")
         @NotBlank(message = "A senha não pode ser vazio!")
         @Size(min = 8, message = "A senha deve conter no mínimo 8 caracteres!")
-        @NotNull String password
+        @NotNull String password,
+
+        @NotNull(message = "A senha não pode ser nulo!")
+        @NotBlank(message = "A senha não pode ser vazio!")
+        String role
 ) {
 
     public User toModel() {
-        return new User(name, email, password);
+        return new User(name, email, password, role);
     }
 }

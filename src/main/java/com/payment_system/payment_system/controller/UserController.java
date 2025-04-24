@@ -1,14 +1,19 @@
 package com.payment_system.payment_system.controller;
 
+import com.payment_system.payment_system.dto.AuthenticationRequest;
+import com.payment_system.payment_system.dto.AuthenticationResponse;
 import com.payment_system.payment_system.dto.UserRequest;
 import com.payment_system.payment_system.dto.UserResponse;
 import com.payment_system.payment_system.entity.User;
+import com.payment_system.payment_system.service.TokenService;
 import com.payment_system.payment_system.service.UserService;
 import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.UnsupportedEncodingException;
@@ -37,4 +42,8 @@ public class UserController {
         }
     }
 
+    @GetMapping("/teste")
+    public String teste() {
+        return "você está logado";
+    }
 }
