@@ -2,10 +2,13 @@ package com.payment_system.payment_system.pix;
 
 import java.io.IOException;
 import java.io.InputStream;
+
+import lombok.Getter;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 import org.springframework.beans.factory.annotation.Value;
 
+@Getter
 public class Credentials {
 
 
@@ -34,23 +37,4 @@ public class Credentials {
         this.debug = credentials.getBoolean("debug");
     }
 
-    public String getClientId() {
-        return clientId;
-    }
-
-    public String getClientSecret() {
-        return clientSecret;
-    }
-
-    public String getCertificate() {
-        return certificate;
-    }
-
-    public boolean isSandbox() {
-        return sandbox;
-    }
-
-    public boolean isDebug() {
-        return debug;
-    }
 }
